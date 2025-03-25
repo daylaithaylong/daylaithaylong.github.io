@@ -1,5 +1,5 @@
 body {
-    background-image: url('/images/background.jpg'); /* Ensure correct image path */
+    background-image: url('/assets/background.jpg'); /* Ensure correct image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@ body {
 }
 
 .hero-overlay {
-    background-image: url('/images/background.jpg'); /* Ensure correct image path */
+    background-image: url('/assets/background.jpg'); /* Ensure correct image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
