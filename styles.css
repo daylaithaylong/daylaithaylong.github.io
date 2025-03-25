@@ -1,3 +1,4 @@
+/* Body Styling */
 body {
     background-color: #f5f5f5; /* Light gray background for a clean, modern look */
     color: black; /* Change text color for better contrast */
@@ -6,9 +7,50 @@ body {
     font-family: Arial, sans-serif; /* Keep a simple, modern font */
 }
 
+/* Hero Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/background.jpg'); /* Hero background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensure it stays behind the text */
+}
+
+.nike-style {
+    max-width: 800px; /* Limit the width of the text container */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center the text */
+    padding: 2rem; /* Add spacing inside the container */
+    color: #fff; /* White text to contrast with the background */
+}
+
+.nike-style h1 {
+    font-size: 3rem; /* Large text for bold emphasis */
+    text-transform: uppercase; /* Uppercase letters for modern styling */
+    letter-spacing: 0.05em; /* Slight spacing between letters */
+}
+
+.nike-style p {
+    font-size: 1.25rem; /* Larger paragraph text for readability */
+    line-height: 1.75; /* Spacing between lines for better readability */
+    color: #f5f5f5; /* Light gray for secondary text */
+}
+
+/* Background Image Container */
 .bg-image-container {
     width: 100%; /* Ensure the image spans the entire page width */
-    margin-bottom: 1rem; /* Add space between image and video section */
+    margin-bottom: 1rem; /* Add space below the background section */
 }
 
 .bg-image {
@@ -17,38 +59,19 @@ body {
     display: block; /* Removes unwanted inline spacing */
 }
 
-
-.hero {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff; /* White or light gray background for hero */
-}
-
-.nike-style {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
-    color: #111; /* Bold black text color */
-}
-
-.nike-style h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.nike-style p {
-    font-size: 1.25rem;
-    line-height: 1.75;
-    color: #555;
-}
-
-
-/* Video Section Layout */
+/* Video Section */
 .video-container iframe {
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Consistent with image styling */
+    border-radius: 0.5rem; /* Rounded corners for consistency */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for polish */
 }
 
+/* General Styling for Responsiveness */
+@media (max-width: 768px) {
+    .nike-style h1 {
+        font-size: 2.5rem; /* Slightly smaller text on smaller screens */
+    }
+
+    .nike-style p {
+        font-size: 1rem; /* Adjust paragraph text for smaller screens */
+    }
+}
