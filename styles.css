@@ -1,10 +1,9 @@
 body {
-    background-image: url('/assets/background.jpg'); /* Ensure correct image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #f5f5f5; /* Light gray background for a clean, modern look */
+    color: black; /* Change text color for better contrast */
     height: 100vh;
-    color: white;
+    margin: 0; /* Remove any default margins */
+    font-family: Arial, sans-serif; /* Keep a simple, modern font */
 }
 
 /* HERO SECTION */
@@ -12,18 +11,30 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: #ffffff; /* White background for the hero section */
 }
 
 .hero-overlay {
-    background-image: url('/assets/background.jpg'); /* Ensure correct image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: brightness(50%); /* Optional: Dim background to enhance text readability */
+    background: none; /* Remove the overlay image */
+    background-color: rgba(0, 0, 0, 0.05); /* Optional: Very subtle gray overlay */
     z-index: -2;
 }
 
-
 .hero h1, .hero p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for better readability */
+    text-shadow: none; /* Remove text shadow for a clean look */
+    color: #333; /* Neutral dark gray for text */
+}
+
+.bg-image {
+    max-width: 100%; /* Ensures it fits within the container */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 1rem; /* Adds spacing below the image */
+    border-radius: 0.5rem; /* Matches video corners for consistency */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Gives a subtle shadow effect */
+}
+
+/* Video Section Layout */
+.video-container iframe {
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Consistent with image styling */
 }
