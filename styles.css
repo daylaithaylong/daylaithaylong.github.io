@@ -99,7 +99,7 @@ body {
 .contact-menu {
     position: absolute;
     right: 0;
-    top: calc(100% + 12px);
+    top: calc(100% + 6px);
     min-width: 260px;
     padding: 0.75rem;
     background: #fff;
@@ -117,10 +117,10 @@ body {
 .contact-menu::before {
     content: "";
     position: absolute;
-    top: -10px;
-    left: 0;
-    right: 0;
-    height: 14px;
+    top: -14px;
+    left: -8px;
+    right: -8px;
+    height: 18px;
 }
 
 .contact-dropdown.open .contact-menu {

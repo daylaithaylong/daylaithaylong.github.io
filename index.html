@@ -130,13 +130,16 @@
         closeTimer = setTimeout(() => {
             dropdown.classList.remove('open');
             button?.setAttribute('aria-expanded', 'false');
-        }, 200);
+        }, 220);
     };
 
     dropdown.addEventListener('mouseenter', openMenu);
     dropdown.addEventListener('mouseleave', scheduleClose);
     dropdown.addEventListener('focusin', openMenu);
     dropdown.addEventListener('focusout', scheduleClose);
+
+    menu?.addEventListener('mouseenter', openMenu);
+    menu?.addEventListener('mouseleave', scheduleClose);
 
     button?.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
