@@ -68,6 +68,7 @@ body {
 /* Contact Dropdown */
 .contact-dropdown {
     position: relative;
+    font-family: inherit;
 }
 
 .contact-button {
@@ -77,6 +78,11 @@ body {
     gap: 0.35rem;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.chevron {
+    font-size: 0.85rem;
+    line-height: 1;
 }
 
 .contact-button:hover,
@@ -103,6 +109,7 @@ body {
     transform: translateY(8px);
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    display: none; /* Fallback for browsers without pointer-events */
     z-index: 1040;
 }
 
@@ -111,6 +118,7 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+    display: block;
 }
 
 .contact-item {
@@ -149,6 +157,11 @@ body {
     justify-content: center;
     color: #fff;
     font-size: 1.1rem;
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 .icon-facebook {
