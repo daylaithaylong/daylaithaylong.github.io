@@ -4,7 +4,7 @@ body {
     color: black; /* Change text color for better contrast */
     height: 100vh;
     margin: 0; /* Remove any default margins */
-    font-family: Arial, sans-serif; /* Keep a simple, modern font */
+    font-family: 'Be Vietnam Pro', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* Hero Section */
@@ -111,6 +111,23 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease;
     display: none; /* Fallback for browsers without pointer-events */
     z-index: 1040;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.contact-menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 14px;
+}
+
+.contact-dropdown.open .contact-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block;
 }
 
 .contact-dropdown:hover .contact-menu,
