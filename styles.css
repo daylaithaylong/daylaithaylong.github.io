@@ -779,6 +779,28 @@ button {
     display: block;
 }
 
+.milestone-highlight {
+    margin-top: 0.75rem;
+}
+
+.highlight-card {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 2px);
+    overflow: hidden;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14);
+    background: #fff;
+}
+
+.highlight-card img {
+    width: 100%;
+    height: clamp(220px, 40vw, 320px);
+    object-fit: cover;
+    display: block;
+}
+
 .timeline-loading {
     color: var(--muted);
     margin-top: 1rem;

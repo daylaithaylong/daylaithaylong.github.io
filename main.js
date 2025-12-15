@@ -123,9 +123,14 @@
     list.className = 'timeline-list';
 
     items.forEach((item, index) => {
+      const yearLabel = item.year || item.date || '';
+      const allImages = Array.isArray(item.images) ? item.images.filter(Boolean) : [];
+      const highlight = item.highlightImage || allImages[0] || '';
+      const gallery = allImages.filter((src) => src && src !== highlight);
+
       const milestone = document.createElement('article');
       milestone.className = 'milestone';
-      milestone.setAttribute('aria-label', `${item.date} - ${item.title || ''}`);
+      milestone.setAttribute('aria-label', `Năm ${yearLabel}`);
 
       const marker = document.createElement('div');
       marker.className = 'milestone-marker';
@@ -137,40 +142,63 @@
       const meta = document.createElement('div');
       meta.className = 'milestone-meta';
       meta.innerHTML = `
-        <p class="milestone-date">${item.date || ''}</p>
-        <h3 class="milestone-title">${item.title || ''}</h3>
+        <p class="milestone-date">${yearLabel}</p>
+        <h3 class="milestone-title">${item.title || 'Cột mốc ' + yearLabel}</h3>
         <p class="milestone-desc">${item.desc || ''}</p>
       `;
 
-      const imagesWrap = document.createElement('div');
-      imagesWrap.className = 'milestone-images';
-      const images = Array.isArray(item.images) ? item.images : [];
+      const highlightWrap = document.createElement('div');
+      highlightWrap.className = 'milestone-highlight';
 
-      images.forEach((src, imgIndex) => {
-        const thumbButton = document.createElement('button');
-        thumbButton.type = 'button';
-        thumbButton.className = 'media-thumb';
-        thumbButton.setAttribute('data-lightbox-src', src);
-        thumbButton.setAttribute('data-lightbox-alt', `${item.title || 'Hành trình'} - ${item.date || ''}`);
-        thumbButton.setAttribute('aria-label', `Xem ảnh ${imgIndex + 1} của ${item.date || ''}`);
+      if (highlight) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'highlight-card';
+        button.setAttribute('data-lightbox-src', highlight);
+        button.setAttribute('data-lightbox-alt', `Hình nổi bật ${yearLabel}`);
 
         const img = document.createElement('img');
-        img.src = src;
+        img.src = highlight;
         img.loading = 'lazy';
-        img.alt = `${item.title || 'Hành trình'} - ${item.date || ''}`;
+        img.alt = `Hình nổi bật ${yearLabel}`;
         img.onerror = () => {
           img.src = 'assets/history/placeholder.svg';
         };
 
-        thumbButton.appendChild(img);
-        imagesWrap.appendChild(thumbButton);
-      });
-
-      if (!images.length) {
-        imagesWrap.innerHTML = '<p class="muted">Đang cập nhật hình ảnh.</p>';
+        button.appendChild(img);
+        highlightWrap.appendChild(button);
+      } else {
+        highlightWrap.innerHTML = '<p class="muted">Đang cập nhật hình nổi bật.</p>';
       }
 
-      card.append(meta, imagesWrap);
+      const galleryWrap = document.createElement('div');
+      galleryWrap.className = 'milestone-images';
+
+      if (gallery.length) {
+        gallery.forEach((src, imgIndex) => {
+          const thumbButton = document.createElement('button');
+          thumbButton.type = 'button';
+          thumbButton.className = 'media-thumb';
+          thumbButton.setAttribute('data-lightbox-src', src);
+          thumbButton.setAttribute('data-lightbox-alt', `Hình ${imgIndex + 1} - ${yearLabel}`);
+          thumbButton.setAttribute('aria-label', `Xem ảnh ${imgIndex + 1} năm ${yearLabel}`);
+
+          const img = document.createElement('img');
+          img.src = src;
+          img.loading = 'lazy';
+          img.alt = `Hình ${imgIndex + 1} - ${yearLabel}`;
+          img.onerror = () => {
+            img.src = 'assets/history/placeholder.svg';
+          };
+
+          thumbButton.appendChild(img);
+          galleryWrap.appendChild(thumbButton);
+        });
+      } else {
+        galleryWrap.innerHTML = '<p class="muted">Đang cập nhật thêm hình.</p>';
+      }
+
+      card.append(meta, highlightWrap, galleryWrap);
       milestone.append(marker, card);
       list.appendChild(milestone);
 
@@ -230,7 +258,7 @@
     const searchInput = qs('[data-video-search]');
     const modal = qs('[data-video-modal]');
     const modalTitle = qs('[data-video-title]', modal);
-    const modalFrame = qs('iframe', modal);
+    const modalFrame = modal ? qs('iframe', modal) : null;
     const modalClose = qs('[data-video-close]', modal);
 
     const state = { tag: 'all', query: '' };
