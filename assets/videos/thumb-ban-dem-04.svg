@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" fill="none">
+  <defs>
+    <linearGradient id="thumbD" x1="42" y1="24" x2="420" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" rx="22" fill="url(#thumbD)"/>
+  <rect x="22" y="22" width="436" height="226" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <circle cx="96" cy="76" r="24" fill="#FCD34D"/>
+  <path d="M120 180h220c20 0 36-16 36-36s-16-36-36-36H180c-24 0-44 18-48 42l-12 60" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <text x="40" y="224" fill="#E2E8F0" font-size="20" font-family="Arial, sans-serif" font-weight="700">Lai xe ban dem</text>
+</svg>

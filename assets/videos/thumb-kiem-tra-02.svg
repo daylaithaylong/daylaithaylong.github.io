@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" fill="none">
+  <defs>
+    <linearGradient id="thumbB" x1="32" y1="32" x2="448" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" rx="22" fill="url(#thumbB)"/>
+  <rect x="22" y="22" width="436" height="226" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <path d="M140 170c24-34 76-58 140-58 34 0 66 8 92 22" stroke="#C7D2FE" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <circle cx="180" cy="124" r="18" fill="#C7D2FE"/>
+  <text x="36" y="82" fill="#E2E8F0" font-size="22" font-family="Arial, sans-serif" font-weight="700">Kiem tra ly thuyet</text>
+</svg>

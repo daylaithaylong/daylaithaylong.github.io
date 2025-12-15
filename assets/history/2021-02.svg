@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="grad2021b" x1="32" y1="48" x2="600" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="32" fill="url(#grad2021b)"/>
+  <rect x="28" y="40" width="584" height="280" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+  <path d="M120 240c40-56 96-84 160-84s120 28 160 84" stroke="#ECFDF3" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <text x="60" y="126" fill="#F8FAFC" font-size="30" font-family="Arial, sans-serif" font-weight="700">2021 - Mo lop toi</text>
+  <text x="60" y="166" fill="#ECFEFF" font-size="18" font-family="Arial, sans-serif">Buoi hoc toi de hoc vien quen phan xa, an toan.</text>
+  <text x="60" y="202" fill="#ECFEFF" font-size="18" font-family="Arial, sans-serif">Day lai Thay Long</text>
+</svg>

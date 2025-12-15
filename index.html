@@ -1,163 +1,343 @@
-﻿<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dạy lái Thầy Long</title>
-    <!-- Bootstrap CSS -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Dạy lái Thầy Long | Vững tay lái - Vững tương lai</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
 
-<header class="d-flex justify-content-between align-items-center px-4 py-3 bg-white shadow-sm">
-    <!-- Logo Section -->
-    <div class="d-flex align-items-center">
-        <img src="/assets/logo.jpg" alt="BeSchool Logo" class="logo me-2" style="height: 40px;">
-        <span class="school-name fw-bold fs-4 text-black">Dạy lái Thầy Long</span>
-    </div>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="index.html">
+            <img src="assets/logo.jpg" alt="Dạy lái Thầy Long" class="brand-mark" loading="lazy">
+            <div class="brand-text">
+                <span class="brand-kicker">Trung tâm dạy lái</span>
+                <span class="brand-title">Thầy Long</span>
+            </div>
+        </a>
 
-    <!-- Navigation and Button -->
-    <div class="d-flex align-items-center">
-        <div class="contact-dropdown position-relative">
-            <button class="btn btn-warning fw-bold contact-button d-flex align-items-center" type="button" aria-haspopup="true" aria-expanded="false">
-                <span>Liên hệ</span>
-                <span class="chevron">▼</span>
-            </button>
-            <div class="contact-menu shadow" role="menu">
-                <a class="contact-item" href="https://www.facebook.com/nhatduy.nguyenhuynh" target="_blank" rel="noopener noreferrer" role="menuitem">
-                    <span class="contact-icon icon-facebook" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
-                            <path d="M14.5 8H16V5h-1.6C11.9 5 11 6.7 11 8.7V10H9v3h2v6h3v-6h2.2l.3-3H14v-1.2c0-.6.3-.8.5-.8Z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                    <div class="contact-copy">
-                        <span class="label">Facebook cá nhân</span>
-                        <small>Kết nối trực tiếp</small>
-                    </div>
-                </a>
-                <a class="contact-item" href="https://www.tiktok.com/@duynguyendaylai" target="_blank" rel="noopener noreferrer" role="menuitem">
-                    <span class="contact-icon icon-tiktok" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
-                            <path d="M17.6 7.5a4 4 0 0 1-2.4-.8V13a4.8 4.8 0 1 1-4.8-4.8c.2 0 .5 0 .7.1v2.5a2.4 2.4 0 1 0 1.7 2.3V4h2.4c-.1.8.4 1.6 1 2 .6.5 1.4.7 2.2.6v2.9c-.3.1-.6.1-.8.1z" fill="currentColor"/>
-                        </svg>
-                    </span>
-                    <div class="contact-copy">
-                        <span class="label">TikTok</span>
-                        <small>Video hướng dẫn</small>
-                    </div>
-                </a>
-                <a class="contact-item" href="https://www.facebook.com/profile.php?id=100070984830147" target="_blank" rel="noopener noreferrer" role="menuitem">
-                    <span class="contact-icon icon-fanpage" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
-                            <path d="M18 4.5v15l-4-2H9a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3h5l4-2Z" fill="currentColor"/>
-                            <path d="M7 14v1a2 2 0 0 0 2 2h1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" fill="none"/>
-                        </svg>
-                    </span>
-                    <div class="contact-copy">
-                        <span class="label">Fanpage</span>
-                        <small>Cập nhật thông tin</small>
-                    </div>
-                </a>
+        <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="primaryNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-nav" id="primaryNav">
+            <a href="index.html#highlights" class="nav-link">Ưu điểm</a>
+            <a href="index.html#courses" class="nav-link">Lộ trình</a>
+            <a href="history.html" class="nav-link">Hành trình</a>
+            <a href="videos.html" class="nav-link">Video</a>
+            <a href="index.html#faq" class="nav-link">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="contact-dropdown">
+                <button class="contact-button" type="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="contact-label">Liên hệ</span>
+                    <span class="chevron" aria-hidden="true">▼</span>
+                </button>
+                <div class="contact-menu" role="menu">
+                    <a class="contact-item" href="https://www.facebook.com/nhatduy.nguyenhuynh" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        <span class="contact-icon icon-facebook" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                                <path d="M14.5 8H16V5h-1.6C11.9 5 11 6.7 11 8.7V10H9v3h2v6h3v-6h2.2l.3-3H14v-1.2c0-.6.3-.8.5-.8Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <div class="contact-copy">
+                            <span class="label">Facebook cá nhân</span>
+                            <small>Kết nối trực tiếp</small>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="https://www.tiktok.com/@duynguyendaylai" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        <span class="contact-icon icon-tiktok" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                                <path d="M17.6 7.5a4 4 0 0 1-2.4-.8V13a4.8 4.8 0 1 1-4.8-4.8c.2 0 .5 0 .7.1v2.5a2.4 2.4 0 1 0 1.7 2.3V4h2.4c-.1.8.4 1.6 1 2 .6.5 1.4.7 2.2.6v2.9c-.3.1-.6.1-.8.1z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <div class="contact-copy">
+                            <span class="label">TikTok</span>
+                            <small>Video hướng dẫn</small>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="https://www.facebook.com/profile.php?id=100070984830147" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        <span class="contact-icon icon-fanpage" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                                <path d="M18 4.5v15l-4-2H9a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3h5l4-2Z" fill="currentColor"/>
+                                <path d="M7 14v1a2 2 0 0 0 2 2h1.5" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" fill="none"/>
+                            </svg>
+                        </span>
+                        <div class="contact-copy">
+                            <span class="label">Fanpage</span>
+                            <small>Cập nhật thông tin</small>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero position-relative text-center">
-    <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0" style="background-image: url('/assets/background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
-    <div class="container position-relative z-1 py-5 text-center nike-style">
-        <h1 class="display-4 fw-bold">Vững tay lái - Vững tương lai</h1>
-        <p class="lead">Chúng tôi giúp bạn tự tin trên mọi cung đường. Học nhanh, nhớ lâu, lái an toàn!</p>
-    </div>
-</section>
-
-<div class="video-section container mt-5 text-center">
-    <!-- Video Container -->
-    <div class="video-container row justify-content-center g-4">
-        <!-- Facebook Video -->
-        <div class="col-lg-5 col-md-6 d-flex justify-content-center">
-            <iframe
-                    src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fnhatduy.nguyenhuynh%2Fvideos%2F365186489357558%2F&show_text=false&width=476&t=0"
-                    width="450"
-                    height="450"
-                    class="rounded shadow-sm"
-                    style="border:none;overflow:hidden;"
-                    frameborder="0"
-                    allowfullscreen="true"
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-            </iframe>
+<main>
+    <section class="hero">
+        <div class="hero-visual" aria-hidden="true"></div>
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <p class="eyebrow">Trung tâm Dạy lái Thầy Long</p>
+                <h1>Vững tay lái - Vững tương lai</h1>
+                <p class="lead">Lịch học linh hoạt, kèm sát từng buổi để bạn tự tin trên mọi cung đường.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact">Đặt lịch học</a>
+                    <a class="btn btn-ghost" href="videos.html">Kho video học lái</a>
+                </div>
+                <div class="hero-badges" aria-label="Thông tin nhanh">
+                    <span class="badge-pill">1 kèm 1 - tối đa 2 học viên/xe</span>
+                    <span class="badge-pill">Sa hình + đường trường</span>
+                    <span class="badge-pill">Hẹn lịch linh hoạt sáng/chiều/tối</span>
+                </div>
+            </div>
         </div>
-        <!-- YouTube Video -->
-        <div class="col-lg-5 col-md-6 d-flex justify-content-center">
-            <iframe
-                    width="450"
-                    height="450"
-                    src="https://www.youtube.com/embed/mTY8xMqJIng"
-                    class="rounded shadow-sm"
-                    title="Buổi tập lái đường trường đầu tiên của học viên"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-            </iframe>
+    </section>
+
+    <section id="highlights" class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Vì sao chọn chúng tôi</p>
+                <h2>Ưu điểm nổi bật</h2>
+                <p class="muted">Học nhanh, nhớ lâu và bám sát mục tiêu thi - không tốn thời gian chờ đợi.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card card">
+                    <span class="icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                            <path d="m6 13 4 4 8-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <h3>1 kèm 1 linh hoạt</h3>
+                    <p>Không ghép lớp đông, mỗi buổi được sắp theo khung giờ bạn chọn.</p>
+                </article>
+                <article class="feature-card card">
+                    <span class="icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                            <path d="M4 13h9l3 5 4-12H8l-2 5Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <h3>Thực hành sát đề</h3>
+                    <p>Sa hình, ghép xe, dừng ngang dốc và tình huống đường trường thực tế.</p>
+                </article>
+                <article class="feature-card card">
+                    <span class="icon-circle" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </span>
+                    <h3>Theo sát tới ngày thi</h3>
+                    <p>Nhắc lịch, kiểm tra nhanh lý thuyết và hỗ trợ thi thử để bạn yên tâm.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section split-section">
+        <div class="container split">
+            <div class="split-copy">
+                <p class="eyebrow">Lộ trình gọn</p>
+                <h2>Học gì trong từng chặng?</h2>
+                <p class="muted">Gói học được chia rõ ràng theo mức độ, giúp bạn dễ theo dõi tiến bộ.</p>
+                <div class="stacked-list">
+                    <div class="list-item">
+                        <div class="list-number">01</div>
+                        <div>
+                            <h3>Sa hình chuẩn</h3>
+                            <p>Đánh lái, lùi chuồng, dừng ngang dốc, ghép ngang - luyện đến khi thuần thục.</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-number">02</div>
+                        <div>
+                            <h3>Đường trường</h3>
+                            <p>Ra/vào làn, xử lý giao lộ, vượt xe tải, đi đường đông và cao tốc.</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <div class="list-number">03</div>
+                        <div>
+                            <h3>Thi thử &amp; tâm lý</h3>
+                            <p>Chạy bài thi mô phỏng, kiểm tra lý thuyết nhanh, tips giữ bình tĩnh khi thi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-actions">
+                    <a class="btn btn-ghost" href="history.html">Xem hành trình phát triển</a>
+                </div>
+            </div>
+            <div class="split-pane">
+                <div class="info-card">
+                    <div class="info-head">
+                        <p class="eyebrow">Lịch học</p>
+                        <h3>Sáng / Chiều / Tối</h3>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Linh hoạt đặt lịch từng tuần, tối đa 2 học viên/xe.</li>
+                        <li>Xe số sàn và số tự động, vệ sinh xe sau mỗi ca.</li>
+                        <li>Có sân sa hình riêng, không chen chúc.</li>
+                    </ul>
+                </div>
+                <div class="info-card accent">
+                    <div class="info-head">
+                        <p class="eyebrow">Cần gấp?</p>
+                        <h3>Hẹn lịch trong ngày</h3>
+                    </div>
+                    <p class="muted">Nhắn nhanh cho Thầy Long để chốt buổi phù hợp với lịch làm việc của bạn.</p>
+                    <a class="btn btn-primary" href="#contact">Đặt lịch ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="section accent-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Hành trình</p>
+                <h2>Lịch sử Dạy lái Thầy Long</h2>
+                <p class="muted">Những mốc đáng nhớ từ ngày bắt đầu đến khi đồng hành cùng hàng trăm học viên.</p>
+                <div class="section-actions">
+                    <a class="btn btn-primary" href="history.html">Xem timeline</a>
+                    <a class="btn btn-ghost" href="#contact">Đặt lịch ngay</a>
+                </div>
+            </div>
+            <div class="timeline-preview">
+                <div class="preview-card">
+                    <p class="preview-date">2019</p>
+                    <h3>Khởi đầu</h3>
+                    <p class="muted">Những buổi học đầu tiên tại sân nhà, làm quen tay lái và quy trình an toàn.</p>
+                </div>
+                <div class="preview-card">
+                    <p class="preview-date">2021</p>
+                    <h3>Mở rộng xe</h3>
+                    <p class="muted">Thêm xe số sàn và số tự động, lịch học linh hoạt cả ngày và tối.</p>
+                </div>
+                <div class="preview-card">
+                    <p class="preview-date">2023</p>
+                    <h3>Đồng hành thi</h3>
+                    <p class="muted">Thi thử, chia sẻ kinh nghiệm đường trường, cùng bạn về đích tự tin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-cta" class="section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-copy">
+                    <p class="eyebrow">Kho video học lái</p>
+                    <h2>Tự xem lại bài trước khi lên xe</h2>
+                    <p class="muted">Video sa hình, đường trường, mẹo thi và mẹo giữ tâm lý - sắp xếp rõ ràng, xem trên mọi thiết bị.</p>
+                    <div class="chip-row">
+                        <span class="chip">Sa hình</span>
+                        <span class="chip">Đường trường</span>
+                        <span class="chip">Thi thử</span>
+                        <span class="chip">An toàn</span>
+                    </div>
+                    <a class="btn btn-primary" href="videos.html">Xem video hướng dẫn</a>
+                </div>
+                <div class="cta-preview">
+                    <div class="mini-card">
+                        <p class="muted">Video mới</p>
+                        <h3>Mẹo canh vạch nhanh</h3>
+                        <p class="mini-desc">3 bước lùi chuồng và dừng ngang dốc không lo trừ điểm.</p>
+                    </div>
+                    <div class="mini-card">
+                        <p class="muted">Tâm lý thi</p>
+                        <h3>Checklist 15 phút</h3>
+                        <p class="mini-desc">Chuẩn bị xe, điều chỉnh ghế, gương và giữ nhịp thở đều.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">FAQ</p>
+                <h2>Câu hỏi thường gặp</h2>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Lịch học có linh hoạt không?</summary>
+                    <p>Có. Bạn có thể đặt ca sáng, chiều hoặc tối. Nếu bận đột xuất, chỉ cần báo trước để đổi ca.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Có xe số tự động và số sàn?</summary>
+                    <p>Có cả hai. Bạn được chọn dòng xe phù hợp với nhu cầu thi và sử dụng sau này.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Học phí thanh toán thế nào?</summary>
+                    <p>Đóng theo đợt, rõ từng hạng mục. Học đủ buổi nhưng vẫn hỗ trợ thêm nếu bạn cần luyện thêm.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Có hỗ trợ lý thuyết không?</summary>
+                    <p>Có. Có tài liệu online, video và kiểm tra nhanh trước mỗi buổi để bạn nhớ lâu.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section accent-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="eyebrow">Liên hệ</p>
+                <h2>Đặt lịch học ngay hôm nay</h2>
+                <p class="muted">Nhắn tin hoặc gọi trực tiếp để được sắp lịch nhanh nhất.</p>
+            </div>
+            <div class="contact-grid">
+                <article class="contact-card">
+                    <h3>Gọi trực tiếp</h3>
+                    <p class="muted">Trao đổi nhanh lịch học, tư vấn gói học và lộ trình.</p>
+                    <a class="btn btn-primary" href="https://www.facebook.com/nhatduy.nguyenhuynh" target="_blank" rel="noopener noreferrer">Nhắn Thầy Long</a>
+                </article>
+                <article class="contact-card">
+                    <h3>Nhắn qua mạng xã hội</h3>
+                    <p class="muted">Facebook cá nhân, Fanpage hoặc TikTok (video hướng dẫn).</p>
+                    <div class="inline-links">
+                        <a href="https://www.facebook.com/nhatduy.nguyenhuynh" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.facebook.com/profile.php?id=100070984830147" target="_blank" rel="noopener noreferrer">Fanpage</a>
+                        <a href="https://www.tiktok.com/@duynguyendaylai" target="_blank" rel="noopener noreferrer">TikTok</a>
+                    </div>
+                </article>
+                <article class="contact-card">
+                    <h3>Lịch hẹn tại sân</h3>
+                    <p class="muted">Có sân sa hình riêng, sạch sẽ, hỗ trợ luyện thêm giờ nếu cần.</p>
+                    <a class="btn btn-ghost" href="#courses">Xem lộ trình</a>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <p class="brand-title mb-1">Dạy lái Thầy Long</p>
+            <p class="muted mb-0">Học nhanh - Nhớ lâu - An toàn.</p>
+        </div>
+        <div class="footer-links">
+            <a href="history.html">Hành trình</a>
+            <a href="videos.html">Video</a>
+            <a href="#contact">Liên hệ</a>
         </div>
     </div>
-</div>
+</footer>
 
-<script>
-(() => {
-    const dropdown = document.querySelector('.contact-dropdown');
-    if (!dropdown) return;
-    const menu = dropdown.querySelector('.contact-menu');
-    const button = dropdown.querySelector('.contact-button');
-    let closeTimer;
-
-    const openMenu = () => {
-        clearTimeout(closeTimer);
-        dropdown.classList.add('open');
-        button?.setAttribute('aria-expanded', 'true');
-    };
-
-    const scheduleClose = () => {
-        clearTimeout(closeTimer);
-        closeTimer = setTimeout(() => {
-            dropdown.classList.remove('open');
-            button?.setAttribute('aria-expanded', 'false');
-        }, 220);
-    };
-
-    dropdown.addEventListener('mouseenter', openMenu);
-    dropdown.addEventListener('mouseleave', scheduleClose);
-    dropdown.addEventListener('focusin', openMenu);
-    dropdown.addEventListener('focusout', scheduleClose);
-
-    menu?.addEventListener('mouseenter', openMenu);
-    menu?.addEventListener('mouseleave', scheduleClose);
-
-    button?.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            dropdown.classList.remove('open');
-            button.setAttribute('aria-expanded', 'false');
-            button.blur();
-        }
-    });
-
-    menu?.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            dropdown.classList.remove('open');
-            button?.setAttribute('aria-expanded', 'false');
-            button?.focus();
-        }
-    });
-})();
-</script>
-
+<script src="main.js"></script>
 </body>
 </html>

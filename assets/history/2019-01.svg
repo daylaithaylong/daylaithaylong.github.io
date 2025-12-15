@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="grad2019a" x1="40" y1="40" x2="560" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="32" fill="url(#grad2019a)"/>
+  <rect x="24" y="24" width="592" height="312" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+  <circle cx="520" cy="96" r="36" fill="rgba(255,255,255,0.14)"/>
+  <text x="48" y="120" fill="#F8FAFC" font-size="32" font-family="Arial, sans-serif" font-weight="700">2019 - First riders</text>
+  <text x="48" y="166" fill="#E2E8F0" font-size="18" font-family="Arial, sans-serif">Day lai Thay Long</text>
+  <text x="48" y="210" fill="#E2E8F0" font-size="18" font-family="Arial, sans-serif">Buoi hoc co ban dau tien, lam quen tay lai.</text>
+</svg>

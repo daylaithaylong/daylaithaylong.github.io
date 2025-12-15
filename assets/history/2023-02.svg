@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="grad2023b" x1="64" y1="24" x2="560" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="32" fill="url(#grad2023b)"/>
+  <rect x="28" y="40" width="584" height="280" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)" stroke-width="2"/>
+  <path d="M120 180h200l32-48 32 96 32-64h72" stroke="#FFFBEB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="60" y="118" fill="#F8FAFC" font-size="30" font-family="Arial, sans-serif" font-weight="700">2023 - Ket noi hoc vien</text>
+  <text x="60" y="158" fill="#FFFBEB" font-size="18" font-family="Arial, sans-serif">Cung nhau thi thu, cung nhau ve dich an toan.</text>
+  <text x="60" y="194" fill="#FFFBEB" font-size="18" font-family="Arial, sans-serif">Day lai Thay Long</text>
+</svg>

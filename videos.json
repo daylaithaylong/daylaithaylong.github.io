@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sa-hinh-01",
+    "title": "Lái chững: Mẹo canh vạch nhanh",
+    "desc": "Cách canh vạch, lùi chuồng và xử lý góc hẹp cho học viên mới.",
+    "provider": "youtube",
+    "youtubeId": "mTY8xMqJIng",
+    "thumbnail": "assets/videos/thumb-sa-hinh-01.svg",
+    "tags": ["Sa hình", "Beginner"]
+  },
+  {
+    "id": "ly-thuyet-kiem-tra",
+    "title": "Ôn lý thuyết: mẹo nhớ nhanh biển báo",
+    "desc": "Tổng hợp câu hỏi hay sai và cách loại trừ trong phòng thi.",
+    "provider": "youtube",
+    "youtubeId": "M7lc1UVf-VE",
+    "thumbnail": "assets/videos/thumb-kiem-tra-02.svg",
+    "tags": ["Lý thuyết", "Thi thử"]
+  },
+  {
+    "id": "kinh-nghiem-thuc-te",
+    "title": "Kinh nghiệm đường trường",
+    "desc": "Ghép làn, vượt xe tải và giữ tốc độ ổn định khi chạy xa.",
+    "provider": "youtube",
+    "youtubeId": "YE7VzlLtp-4",
+    "thumbnail": "assets/videos/thumb-kinh-nghiem-03.svg",
+    "tags": ["Đường trường", "Kinh nghiệm"]
+  },
+  {
+    "id": "lai-xe-ban-dem",
+    "title": "Lái xe ban đêm an toàn",
+    "desc": "Điều chỉnh đèn, giữ khoảng cách và quan sát tốt trong điều kiện tối.",
+    "provider": "youtube",
+    "youtubeId": "ysz5S6PUM-U",
+    "thumbnail": "assets/videos/thumb-ban-dem-04.svg",
+    "tags": ["Ban đêm", "An toàn"]
+  }
+]

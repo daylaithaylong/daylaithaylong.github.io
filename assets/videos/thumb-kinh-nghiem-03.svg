@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" fill="none">
+  <defs>
+    <linearGradient id="thumbC" x1="28" y1="24" x2="440" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" rx="22" fill="url(#thumbC)"/>
+  <rect x="22" y="22" width="436" height="226" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <rect x="110" y="90" width="260" height="90" rx="18" fill="rgba(0,0,0,0.28)" stroke="#FFFBEB" stroke-width="4"/>
+  <text x="132" y="148" fill="#FFFBEB" font-size="20" font-family="Arial, sans-serif" font-weight="700">Kinh nghiem thi thuc te</text>
+</svg>

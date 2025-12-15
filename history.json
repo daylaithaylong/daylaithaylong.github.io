@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2019",
+    "title": "Khởi đầu",
+    "desc": "Những buổi học đầu tiên tại sân nhà, làm quen tay lái và quy trình an toàn.",
+    "images": ["assets/history/2019-01.svg", "assets/history/2019-02.svg"]
+  },
+  {
+    "date": "2021",
+    "title": "Mở rộng",
+    "desc": "Thêm xe số sàn và số tự động, lịch học linh hoạt cả ngày và tối cho học viên.",
+    "images": ["assets/history/2021-01.svg", "assets/history/2021-02.svg"]
+  },
+  {
+    "date": "2023",
+    "title": "Đồng hành thi",
+    "desc": "Cùng học viên ôn sa hình, thi thử và hỗ trợ kinh nghiệm đường trường thực tế.",
+    "images": ["assets/history/2023-01.svg", "assets/history/2023-02.svg"]
+  }
+]

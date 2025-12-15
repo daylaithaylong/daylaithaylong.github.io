@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="grad2023a" x1="40" y1="32" x2="560" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="32" fill="url(#grad2023a)"/>
+  <rect x="32" y="32" width="576" height="296" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.24)" stroke-width="2"/>
+  <path d="M140 214c56-28 116-28 172 0 36 18 70 18 106 0" stroke="#BAE6FD" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <text x="60" y="126" fill="#F8FAFC" font-size="30" font-family="Arial, sans-serif" font-weight="700">2023 - Dong hanh</text>
+  <text x="60" y="166" fill="#E2E8F0" font-size="18" font-family="Arial, sans-serif">Lam ban dong hanh tren moi cung duong thi.</text>
+  <text x="60" y="202" fill="#E2E8F0" font-size="18" font-family="Arial, sans-serif">Day lai Thay Long</text>
+</svg>

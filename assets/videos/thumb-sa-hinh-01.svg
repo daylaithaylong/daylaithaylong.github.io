@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="270" viewBox="0 0 480 270" fill="none">
+  <defs>
+    <linearGradient id="thumbA" x1="40" y1="24" x2="420" y2="246" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="270" rx="22" fill="url(#thumbA)"/>
+  <rect x="22" y="22" width="436" height="226" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)" stroke-width="2"/>
+  <circle cx="240" cy="135" r="56" fill="rgba(15,23,42,0.55)" stroke="#ECFEFF" stroke-width="6"/>
+  <polygon points="230,110 280,135 230,160" fill="#ECFEFF"/>
+  <text x="38" y="82" fill="#ECFEFF" font-size="22" font-family="Arial, sans-serif" font-weight="700">Sa hinh - Meo nhanh</text>
+</svg>
