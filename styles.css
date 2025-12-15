@@ -792,13 +792,31 @@ button {
     overflow: hidden;
     box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14);
     background: #fff;
+    aspect-ratio: 16 / 9;
 }
 
 .highlight-card img {
     width: 100%;
-    height: clamp(220px, 40vw, 320px);
+    height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.featured-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 1.25rem;
+    background: #f8fafc;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    min-height: 200px;
+}
+
+.placeholder-graphic svg {
+    width: 72px;
+    height: 72px;
 }
 
 .timeline-loading {

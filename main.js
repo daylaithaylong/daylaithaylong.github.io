@@ -162,13 +162,13 @@
         img.loading = 'lazy';
         img.alt = `Hình nổi bật ${yearLabel}`;
         img.onerror = () => {
-          img.src = 'assets/history/placeholder.svg';
+          button.replaceWith(createFeaturedPlaceholder(yearLabel));
         };
 
         button.appendChild(img);
         highlightWrap.appendChild(button);
       } else {
-        highlightWrap.innerHTML = '<p class="muted">Đang cập nhật hình nổi bật.</p>';
+        highlightWrap.appendChild(createFeaturedPlaceholder(yearLabel));
       }
 
       const galleryWrap = document.createElement('div');
@@ -406,5 +406,22 @@
       chip.classList.toggle('is-active', isActive);
       chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
+  }
+
+  function createFeaturedPlaceholder(yearLabel) {
+    const wrap = document.createElement('div');
+    wrap.className = 'featured-placeholder';
+    wrap.innerHTML = `
+      <div class="placeholder-graphic" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="presentation" focusable="false">
+          <rect x="12" y="18" width="40" height="28" rx="6" ry="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+          <circle cx="22" cy="30" r="5" fill="#cbd5e1"/>
+          <path d="M28 42c3-4 7-6 12-6 5 0 9 2 12 6" stroke="#cbd5e1" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <rect x="24" y="14" width="16" height="6" rx="2" fill="#cbd5e1"/>
+        </svg>
+      </div>
+      <p class="muted">Chưa có ảnh nổi bật${yearLabel ? ' ' + yearLabel : ''}</p>
+    `;
+    return wrap;
   }
 })();
