@@ -106,6 +106,7 @@
       const response = await fetch('history.json', { cache: 'no-store' });
       const items = await response.json();
       renderTimeline(container, items);
+      enableTimelineImageDeterrents(container);
       loadingEl?.remove();
     } catch (error) {
       if (loadingEl) loadingEl.textContent = 'Không tải được hành trình. Vui lòng thử lại.';
@@ -161,6 +162,8 @@
         img.src = highlight;
         img.loading = 'lazy';
         img.alt = `Hình nổi bật ${yearLabel}`;
+        img.decoding = 'async';
+        img.draggable = false;
         img.onerror = () => {
           button.replaceWith(createFeaturedPlaceholder(yearLabel));
         };
@@ -187,6 +190,8 @@
           img.src = src;
           img.loading = 'lazy';
           img.alt = `Hình ${imgIndex + 1} - ${yearLabel}`;
+          img.decoding = 'async';
+          img.draggable = false;
           img.onerror = () => {
             img.src = 'assets/history/placeholder.svg';
           };
@@ -209,6 +214,16 @@
 
     root.innerHTML = '';
     root.appendChild(list);
+  }
+
+  function enableTimelineImageDeterrents(root) {
+    if (!root) return;
+    root.addEventListener('contextmenu', (event) => {
+      const img = event.target.closest('img');
+      if (img && root.contains(img)) {
+        event.preventDefault();
+      }
+    });
   }
 
   function initLightbox() {
