@@ -150,6 +150,8 @@
 
       const highlightWrap = document.createElement('div');
       highlightWrap.className = 'milestone-highlight';
+      const mediaFrame = document.createElement('div');
+      mediaFrame.className = 'featured-media';
 
       if (highlight) {
         const button = document.createElement('button');
@@ -169,10 +171,12 @@
         };
 
         button.appendChild(img);
-        highlightWrap.appendChild(button);
+        mediaFrame.appendChild(button);
       } else {
-        highlightWrap.appendChild(createFeaturedPlaceholder(yearLabel));
+        mediaFrame.appendChild(createFeaturedPlaceholder(yearLabel));
       }
+
+      highlightWrap.appendChild(mediaFrame);
 
       const galleryWrap = document.createElement('div');
       galleryWrap.className = 'milestone-images';
