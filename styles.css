@@ -636,18 +636,24 @@ button {
 }
 
 .contact-icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
     border-radius: 12px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
 }
 
-.contact-icon svg {
-    width: 20px;
-    height: 20px;
+.contact-icon svg,
+.contact-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
 }
 
 .icon-facebook {
