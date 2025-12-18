@@ -5,6 +5,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initNavToggle();
     initContactDropdown();
+    initMapWidget();
     initTimeline();
     initLightbox();
     initVideoLibrary();
@@ -95,6 +96,44 @@
         closeMenu();
         button?.focus();
       }
+    });
+  }
+
+  function initMapWidget() {
+    const widgets = qsa('[data-map-widget]');
+    if (!widgets.length) return;
+
+    widgets.forEach((widget, index) => {
+      const toggle = qs('[data-map-toggle]', widget);
+      const body = qs('.map-widget__body', widget);
+      const iframe = qs('iframe', widget);
+      if (!toggle || !body || !iframe) return;
+
+      const mapSrc = iframe.getAttribute('data-map-src');
+
+      const setExpanded = (expanded) => {
+        widget.classList.toggle('is-collapsed', !expanded);
+        body.setAttribute('aria-hidden', expanded ? 'false' : 'true');
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        toggle.textContent = expanded ? 'Thu gọn' : 'Mở';
+        if (expanded && !iframe.src && mapSrc) {
+          iframe.src = mapSrc;
+        }
+      };
+
+      const preferCollapsed = window.innerWidth <= 720;
+      setExpanded(!preferCollapsed);
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth <= 720 && toggle.getAttribute('aria-expanded') === 'true') {
+          setExpanded(false);
+        }
+      });
     });
   }
 

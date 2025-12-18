@@ -1,6 +1,7 @@
 [
   {
     "year": "2015",
+    "desc": "Chiếc xe đầu tiên - khởi đầu hành trình Dạy lái Thầy Long.",
     "highlightImage": "assets/history/2015/highlight.jpg",
     "images": [
       "assets/history/2015/highlight.jpg",
@@ -11,6 +12,7 @@
   },
   {
     "year": "2016",
+    "desc": "Thêm xe để phục vụ nhiều học viên hơn, lịch học linh hoạt hơn.",
     "highlightImage": "assets/history/2016/highlight.jpg",
     "images": [
       "assets/history/2016/highlight.jpg",
@@ -22,6 +24,7 @@
   },
   {
     "year": "2017",
+    "desc": "Nhận được nhiều anh chị yêu mến, giới thiệu học viên mới liên tục.",
     "highlightImage": "assets/history/2017/033886a4c5a94af713b820.jpg",
     "images": [
       "assets/history/2017/033886a4c5a94af713b820.jpg",
@@ -40,6 +43,7 @@
   },
   {
     "year": "2018",
+    "desc": "Được cộng đồng tin tưởng, lớp đông hơn nhưng vẫn giữ kèm sát từng bạn.",
     "highlightImage": "assets/history/2018/0c35ba71fc7c73222a6d26.jpg",
     "images": [
       "assets/history/2018/0c35ba71fc7c73222a6d26.jpg",
@@ -66,6 +70,7 @@
   },
   {
     "year": "2019",
+    "desc": "Nâng cấp đội ngũ giáo viên và xe tập, chuẩn hóa quy trình dạy.",
     "highlightImage": "assets/history/2019/highlight.jpg",
     "images": [
       "assets/history/2019/highlight.jpg",
@@ -74,6 +79,7 @@
   },
   {
     "year": "2021",
+    "desc": "Đủ xe và thầy để phục vụ chuyên nghiệp, riêng tư, chất lượng.",
     "highlightImage": "assets/history/2021/highlight.jpg",
     "images": [
       "assets/history/2021/highlight.jpg"
