@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   const qs = (selector, root = document) => (root ? root.querySelector(selector) : null);
   const qsa = (selector, root = document) => (root ? Array.from(root.querySelectorAll(selector)) : []);
 
@@ -112,7 +112,7 @@
       const mapSrc = iframe.getAttribute('data-map-src');
 
       const setToggleLabel = (expanded) => {
-        const label = expanded ? 'Thu gß╗ìn bß║ún ─æß╗ô' : 'Mß╗ƒ bß║ún ─æß╗ô';
+        const label = expanded ? 'Thu gọn bản đồ' : 'Mở bản đồ';
         toggle.setAttribute('aria-label', label);
         toggle.setAttribute('title', label);
       };
@@ -154,14 +154,14 @@
       enableTimelineImageDeterrents(container);
       loadingEl?.remove();
     } catch (error) {
-      if (loadingEl) loadingEl.textContent = 'Kh├┤ng tß║úi ─æ╞░ß╗úc h├ánh tr├¼nh. Vui l├▓ng thß╗¡ lß║íi.';
+      if (loadingEl) loadingEl.textContent = 'Không tải được hành trình. Vui lòng thử lại.';
       console.error('Timeline load failed', error);
     }
   }
 
   function renderTimeline(root, items) {
     if (!Array.isArray(items) || !items.length) {
-      root.innerHTML = '<p class="muted">─Éang cß║¡p nhß║¡t h├ánh tr├¼nh.</p>';
+      root.innerHTML = '<p class="muted">Đang cập nhật hành trình.</p>';
       return;
     }
 
@@ -176,7 +176,7 @@
 
       const milestone = document.createElement('article');
       milestone.className = 'milestone';
-      milestone.setAttribute('aria-label', `N─âm ${yearLabel}`);
+      milestone.setAttribute('aria-label', `Năm ${yearLabel}`);
 
       const marker = document.createElement('div');
       marker.className = 'milestone-marker';
@@ -189,7 +189,7 @@
       meta.className = 'milestone-meta';
       meta.innerHTML = `
         <p class="milestone-date">${yearLabel}</p>
-        <h3 class="milestone-title">${item.title || 'Cß╗Öt mß╗æc ' + yearLabel}</h3>
+        <h3 class="milestone-title">${item.title || 'Cột mốc ' + yearLabel}</h3>
         <p class="milestone-desc">${item.desc || ''}</p>
       `;
 
@@ -203,12 +203,12 @@
         button.type = 'button';
         button.className = 'highlight-card';
         button.setAttribute('data-lightbox-src', highlight);
-        button.setAttribute('data-lightbox-alt', `H├¼nh nß╗òi bß║¡t ${yearLabel}`);
+        button.setAttribute('data-lightbox-alt', `Hình nổi bật ${yearLabel}`);
 
         const img = document.createElement('img');
         img.src = highlight;
         img.loading = 'lazy';
-        img.alt = `H├¼nh nß╗òi bß║¡t ${yearLabel}`;
+        img.alt = `Hình nổi bật ${yearLabel}`;
         img.decoding = 'async';
         img.draggable = false;
         img.onerror = () => {
@@ -232,13 +232,13 @@
           thumbButton.type = 'button';
           thumbButton.className = 'media-thumb';
           thumbButton.setAttribute('data-lightbox-src', src);
-          thumbButton.setAttribute('data-lightbox-alt', `H├¼nh ${imgIndex + 1} - ${yearLabel}`);
-          thumbButton.setAttribute('aria-label', `Xem ß║únh ${imgIndex + 1} n─âm ${yearLabel}`);
+          thumbButton.setAttribute('data-lightbox-alt', `Hình ${imgIndex + 1} - ${yearLabel}`);
+          thumbButton.setAttribute('aria-label', `Xem ảnh ${imgIndex + 1} năm ${yearLabel}`);
 
           const img = document.createElement('img');
           img.src = src;
           img.loading = 'lazy';
-          img.alt = `H├¼nh ${imgIndex + 1} - ${yearLabel}`;
+          img.alt = `Hình ${imgIndex + 1} - ${yearLabel}`;
           img.decoding = 'async';
           img.draggable = false;
           img.onerror = () => {
@@ -249,7 +249,7 @@
           galleryWrap.appendChild(thumbButton);
         });
       } else {
-        galleryWrap.innerHTML = '<p class="muted">─Éang cß║¡p nhß║¡t th├¬m h├¼nh.</p>';
+        galleryWrap.innerHTML = '<p class="muted">Đang cập nhật thêm hình.</p>';
       }
 
       card.append(meta, highlightWrap, galleryWrap);
@@ -293,7 +293,7 @@
       if (!trigger) return;
       event.preventDefault();
       const src = trigger.getAttribute('data-lightbox-src');
-      const alt = trigger.getAttribute('data-lightbox-alt') || trigger.getAttribute('alt') || 'H├¼nh ß║únh';
+      const alt = trigger.getAttribute('data-lightbox-alt') || trigger.getAttribute('alt') || 'Hình ảnh';
       img.src = src;
       img.alt = alt;
       caption.textContent = alt;
@@ -342,7 +342,7 @@
       const response = await fetch('videos.json', { cache: 'no-store' });
       videos = await response.json();
     } catch (error) {
-      grid.innerHTML = '<p class="muted">Kh├┤ng tß║úi ─æ╞░ß╗úc danh s├ích video.</p>';
+      grid.innerHTML = '<p class="muted">Không tải được danh sách video.</p>';
       console.error('Video load failed', error);
       return;
     }
@@ -357,7 +357,7 @@
     );
 
     if (filterWrap) {
-      const allButton = createFilterChip('Tß║Ñt cß║ú', 'all', state);
+      const allButton = createFilterChip('Tất cả', 'all', state);
       filterWrap.appendChild(allButton);
       allTags.forEach((tag) => {
         filterWrap.appendChild(createFilterChip(tag, tag, state));
@@ -378,7 +378,7 @@
       });
 
       if (!filtered.length) {
-        grid.innerHTML = '<p class="muted">Kh├┤ng t├¼m thß║Ñy video ph├╣ hß╗úp.</p>';
+        grid.innerHTML = '<p class="muted">Không tìm thấy video phù hợp.</p>';
         return;
       }
 
@@ -389,7 +389,7 @@
         card.innerHTML = `
           <button class="video-thumb" type="button" data-video-id="${video.id}">
             <img src="${video.thumbnail}" alt="Xem video: ${video.title}" loading="lazy">
-            <span class="play-badge" aria-hidden="true">Γû╢</span>
+            <span class="play-badge" aria-hidden="true">▶</span>
           </button>
           <div class="video-body">
             <h3 class="video-title">${video.title || ''}</h3>
@@ -484,9 +484,8 @@
           <rect x="24" y="14" width="16" height="6" rx="2" fill="#cbd5e1"/>
         </svg>
       </div>
-      <p class="muted">Ch╞░a c├│ ß║únh nß╗òi bß║¡t${yearLabel ? ' ' + yearLabel : ''}</p>
+      <p class="muted">Chưa có ảnh nổi bật${yearLabel ? ' ' + yearLabel : ''}</p>
     `;
     return wrap;
   }
 })();
-
