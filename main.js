@@ -111,17 +111,11 @@
 
       const mapSrc = iframe.getAttribute('data-map-src');
 
-      const setToggleLabel = (expanded) => {
-        const label = expanded ? 'Thu gọn bản đồ' : 'Mở bản đồ';
-        toggle.setAttribute('aria-label', label);
-        toggle.setAttribute('title', label);
-      };
-
       const setExpanded = (expanded) => {
         widget.classList.toggle('is-collapsed', !expanded);
         body.setAttribute('aria-hidden', expanded ? 'false' : 'true');
         toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        setToggleLabel(expanded);
+        toggle.textContent = expanded ? 'Thu gọn' : 'Mở';
         if (expanded && !iframe.src && mapSrc) {
           iframe.src = mapSrc;
         }
