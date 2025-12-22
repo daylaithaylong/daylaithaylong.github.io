@@ -703,9 +703,6 @@ button {
 
 .map-widget__meta {
     min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
 }
 
 .map-widget__title {
@@ -714,35 +711,44 @@ button {
     font-size: 0.95rem;
 }
 
-.map-widget__reviews-link {
-    display: inline-flex;
+.map-widget__rating {
+    display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.map-widget__star {
+    color: var(--accent);
+}
+
+.map-widget__reviews {
+    color: var(--muted);
     font-weight: 600;
+}
+
+.map-widget__reviews-link {
+    font-weight: 700;
     color: var(--primary);
-    text-decoration: none;
 }
 
 .map-widget__actions {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.5rem;
 }
 
-.map-widget__toggle,
-.map-widget__open {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.map-widget__toggle {
+    padding: 0.45rem 0.85rem;
     border-radius: 999px;
     border: 1px solid var(--border);
     background: #fff;
-    color: var(--text);
+    font-weight: 700;
     cursor: pointer;
-    padding: 0;
-    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .map-widget__toggle:hover,
@@ -752,37 +758,18 @@ button {
     box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
 }
 
-.map-widget__toggle:focus-visible,
-.map-widget__open:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
-.map-widget__toggle[aria-expanded="true"] .map-widget__toggle-icon {
-    transform: rotate(180deg);
-}
-
 .map-widget__open {
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
     background: var(--primary);
     color: #fff;
-    border-color: var(--primary);
+    font-weight: 700;
     box-shadow: 0 10px 26px rgba(17, 94, 89, 0.22);
-    text-decoration: none;
 }
 
 .map-widget__open:hover,
 .map-widget__open:focus-visible {
     background: var(--primary-strong);
-}
-
-.map-widget__icon {
-    width: 18px;
-    height: 18px;
-    display: block;
-}
-
-.map-widget__toggle-icon {
-    transition: transform 0.2s ease;
 }
 
 .map-widget__body {
