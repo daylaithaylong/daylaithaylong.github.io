@@ -1,0 +1,8 @@
+{
+  "name": "daylaithaylong-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:history": "node tools/gen_history.js"
+  }
+}

@@ -1,0 +1,41 @@
+name: Update history.json
+
+on:
+  push:
+    paths:
+      - 'assets/history/**'
+      - 'tools/gen_history.js'
+      - 'history-meta.json'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate history manifest
+        run: npm run build:history
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet --exit-code history.json; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history.json
+          git commit -m "chore: update history.json [skip ci]"
+          git push
