@@ -741,14 +741,37 @@ button {
     gap: 0.5rem;
 }
 
-.map-widget__toggle {
-    padding: 0.45rem 0.85rem;
+.map-widget__toggle,
+.map-widget__open {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 999px;
+    line-height: 1;
+}
+
+.map-widget__toggle {
     border: 1px solid var(--border);
     background: #fff;
     font-weight: 700;
     cursor: pointer;
     transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-widget__icon {
+    width: 22px;
+    height: 22px;
+}
+
+.map-widget__toggle svg {
+    transition: transform 0.2s ease;
+}
+
+.map-widget__toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
 }
 
 .map-widget__toggle:hover,
@@ -759,8 +782,6 @@ button {
 }
 
 .map-widget__open {
-    padding: 0.45rem 0.85rem;
-    border-radius: 999px;
     background: var(--primary);
     color: #fff;
     font-weight: 700;

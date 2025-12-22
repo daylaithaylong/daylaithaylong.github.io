@@ -110,12 +110,19 @@
       if (!toggle || !body || !iframe) return;
 
       const mapSrc = iframe.getAttribute('data-map-src');
+      const defaultLabel = toggle.getAttribute('aria-label') || '';
+      const expandedLabel = toggle.getAttribute('data-label-expanded') || defaultLabel;
+      const collapsedLabel = toggle.getAttribute('data-label-collapsed') || defaultLabel;
 
       const setExpanded = (expanded) => {
         widget.classList.toggle('is-collapsed', !expanded);
         body.setAttribute('aria-hidden', expanded ? 'false' : 'true');
         toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        toggle.textContent = expanded ? 'Thu gọn' : 'Mở';
+        const label = expanded ? expandedLabel : collapsedLabel;
+        if (label) {
+          toggle.setAttribute('aria-label', label);
+          toggle.setAttribute('title', label);
+        }
         if (expanded && !iframe.src && mapSrc) {
           iframe.src = mapSrc;
         }

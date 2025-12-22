@@ -1,11 +1,3 @@
-CRITICAL:
-- Use repository edit tools to change ONLY the map widget code block.
-- Do NOT reformat or rewrite whole HTML files.
-- Output a minimal diff and apply only those lines.
-- Do NOT modify any Vietnamese text anywhere (byte-for-byte).
-- After edits, run a quick grep check: search for mojibake patterns (Ã, Â, á») and revert if any appear.
-You will edit my repo directly.
-
 HARD RULES:
 1) Modify ONLY the floating map widget section (HTML container + its scoped CSS/JS).
 2) Do NOT reformat / rewrite any other part of index.html/history.html.

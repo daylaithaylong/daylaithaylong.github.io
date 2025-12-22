@@ -221,16 +221,18 @@
     <div class="map-widget__header">
         <div class="map-widget__meta">
             <p class="map-widget__title">Xem bản đồ</p>
-            <div class="map-widget__rating" aria-label="Đánh giá 4.9 trên 120 lượt">
-                <span class="map-widget__star" aria-hidden="true">&#9733;</span>
-                <span class="map-widget__rating-value">4.9</span>
-                <span class="map-widget__reviews">(120 đánh giá)</span>
-                <a class="map-widget__reviews-link" href="https://www.google.com/maps/place/D%E1%BA%A1y+l%C3%A1i+th%E1%BA%A7y+Long/@10.0240981,105.755198,20.67z/data=!4m6!3m5!1s0x60edc4504549a0e1:0x9ef6f9d92d269d7b!8m2!3d10.0239479!4d105.7551907!16s%2Fg%2F11t_t835zt?entry=ttu" target="_blank" rel="noopener noreferrer">Xem đánh giá</a>
-            </div>
         </div>
         <div class="map-widget__actions">
-            <button class="map-widget__toggle" type="button" data-map-toggle aria-expanded="false" aria-controls="mapWidgetFrame">Mở</button>
-            <a class="map-widget__open" href="https://www.google.com/maps?daddr=10.0239479,105.7551907" target="_blank" rel="noopener noreferrer">Chỉ đường</a>
+            <button class="map-widget__toggle" type="button" data-map-toggle aria-expanded="false" aria-controls="mapWidgetFrame" aria-label="Mở bản đồ" data-label-expanded="Thu gọn bản đồ" data-label-collapsed="Mở bản đồ">
+                <svg class="map-widget__icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+            <a class="map-widget__open" href="https://www.google.com/maps?daddr=10.0239479,105.7551907" target="_blank" rel="noopener noreferrer" aria-label="Chỉ đường" title="Chỉ đường">
+                <svg class="map-widget__icon" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+                    <path d="M12 3l8 8-8 8-8-8 8-8zm0 5.5L9.5 11H12v6h1.5v-6H16L12 8.5z" fill="currentColor"></path>
+                </svg>
+            </a>
         </div>
     </div>
     <div class="map-widget__body" id="mapWidgetFrame" aria-hidden="true">
