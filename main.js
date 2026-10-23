@@ -252,7 +252,50 @@
         galleryWrap.innerHTML = '<p class="muted">Đang cập nhật thêm hình.</p>';
       }
 
-      card.append(meta, highlightWrap, galleryWrap);
+      const gallerySection = document.createElement('div');
+      gallerySection.className = 'milestone-gallery';
+      if (gallery.length) {
+        const controls = document.createElement('div');
+        controls.className = 'gallery-controls';
+        const previous = document.createElement('button');
+        const next = document.createElement('button');
+        previous.type = next.type = 'button';
+        previous.className = next.className = 'gallery-arrow';
+        previous.textContent = '‹';
+        next.textContent = '›';
+        previous.setAttribute('aria-label', `Ảnh trước năm ${yearLabel}`);
+        next.setAttribute('aria-label', `Ảnh tiếp theo năm ${yearLabel}`);
+        galleryWrap.id = `gallery-${index}`;
+        previous.setAttribute('aria-controls', galleryWrap.id);
+        next.setAttribute('aria-controls', galleryWrap.id);
+        galleryWrap.tabIndex = 0;
+        galleryWrap.setAttribute('role', 'region');
+        galleryWrap.setAttribute('aria-label', `Danh sách ảnh năm ${yearLabel}`);
+        const updateControls = () => {
+          const max = galleryWrap.scrollWidth - galleryWrap.clientWidth;
+          previous.disabled = galleryWrap.scrollLeft <= 1;
+          next.disabled = galleryWrap.scrollLeft >= max - 1;
+        };
+        const move = (direction) => galleryWrap.scrollBy({
+          left: direction * Math.max(140, galleryWrap.clientWidth * 0.8),
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+        });
+        previous.addEventListener('click', () => move(-1));
+        next.addEventListener('click', () => move(1));
+        galleryWrap.addEventListener('scroll', updateControls, { passive: true });
+        galleryWrap.addEventListener('keydown', (event) => {
+          if (event.target !== galleryWrap) return;
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            move(event.key === 'ArrowLeft' ? -1 : 1);
+          }
+        });
+        new ResizeObserver(updateControls).observe(galleryWrap);
+        controls.append(previous, next);
+        gallerySection.appendChild(controls);
+      }
+      gallerySection.appendChild(galleryWrap);
+      card.append(meta, highlightWrap, gallerySection);
       milestone.append(marker, card);
       list.appendChild(milestone);
 
@@ -281,22 +324,41 @@
     const img = qs('[data-lightbox-img]', lightbox);
     const caption = qs('[data-lightbox-caption]', lightbox);
     const closeBtn = qs('[data-lightbox-close]', lightbox);
+    const previous = qs('[data-lightbox-prev]', lightbox);
+    const next = qs('[data-lightbox-next]', lightbox);
+    let images = [];
+    let activeIndex = 0;
+    let opener;
+    const showImage = () => {
+      const trigger = images[activeIndex];
+      img.src = trigger.getAttribute('data-lightbox-src');
+      img.alt = trigger.getAttribute('data-lightbox-alt') || 'Hình ảnh';
+      caption.textContent = `${activeIndex + 1}/${images.length} · ${img.alt}`;
+      previous.disabled = activeIndex === 0;
+      next.disabled = activeIndex === images.length - 1;
+    };
+    const moveImage = (direction) => {
+      activeIndex = Math.max(0, Math.min(images.length - 1, activeIndex + direction));
+      showImage();
+    };
+    previous?.addEventListener('click', () => moveImage(-1));
+    next?.addEventListener('click', () => moveImage(1));
 
     const close = () => {
       lightbox.setAttribute('hidden', '');
       document.body.classList.remove('no-scroll');
       img.src = '';
+      opener?.focus({ preventScroll: true });
     };
 
     document.addEventListener('click', (event) => {
       const trigger = event.target.closest('[data-lightbox-src]');
       if (!trigger) return;
       event.preventDefault();
-      const src = trigger.getAttribute('data-lightbox-src');
-      const alt = trigger.getAttribute('data-lightbox-alt') || trigger.getAttribute('alt') || 'Hình ảnh';
-      img.src = src;
-      img.alt = alt;
-      caption.textContent = alt;
+      opener = trigger;
+      images = qsa('[data-lightbox-src]', trigger.closest('.milestone') || document);
+      activeIndex = images.indexOf(trigger);
+      showImage();
       lightbox.removeAttribute('hidden');
       document.body.classList.add('no-scroll');
       closeBtn?.focus();
@@ -309,8 +371,11 @@
       }
     });
     document.addEventListener('keydown', (event) => {
-      if (!lightbox.hasAttribute('hidden') && event.key === 'Escape') {
-        close();
+      if (lightbox.hasAttribute('hidden')) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        moveImage(event.key === 'ArrowLeft' ? -1 : 1);
       }
     });
   }

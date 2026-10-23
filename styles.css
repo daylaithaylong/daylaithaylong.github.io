@@ -925,9 +925,9 @@ button {
 }
 
 .media-thumb {
-    flex: 0 0 auto;
+    flex: 0 0 128px;
     height: 96px;
-    width: auto;
+    width: 128px;
     aspect-ratio: 4 / 3;
     border-radius: 12px;
     overflow: hidden;
@@ -935,7 +935,51 @@ button {
     background: #f8fafc;
     scroll-snap-align: start;
     padding: 0;
-    cursor: grab;
+    cursor: pointer;
+}
+
+.milestone-gallery {
+    min-width: 0;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.gallery-arrow,
+.lightbox-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--primary-strong);
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.gallery-arrow:disabled,
+.lightbox-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.lightbox-arrow--prev {
+    left: 10px;
+}
+
+.lightbox-arrow--next {
+    right: 10px;
 }
 
 .media-thumb img {
@@ -1046,6 +1090,8 @@ button {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 75vh;
+    object-fit: contain;
 }
 
 .lightbox-caption {
